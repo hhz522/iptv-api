@@ -10,7 +10,11 @@ name: 'Update schedule'
 # If scheduled execution is required, use other deployment methods.
 
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '0 18 * * *' # 每日北京时间凌晨2点运行
+permissions:
+  contents: write
+
 
 jobs:
   push:
